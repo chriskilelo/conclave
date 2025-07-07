@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('honorifics', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->unique(); // e.g. 'mr', 'mrs', 'dr', 'prof', 'rev'
+            $table->text('description')->nullable();
+            $table->boolean('is_active')->default(false);
             $table->timestamps();
         });
     }
