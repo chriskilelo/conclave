@@ -56,6 +56,19 @@
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-ring: var(--sidebar-ring);
+
+    /* Custom Royal Violet Color Palette */
+    --color-royalviolet-50: #f3f0fa;
+    --color-royalviolet-100: #e1daf3;
+    --color-royalviolet-200: #c3b5e7;
+    --color-royalviolet-300: #a28bd9;
+    --color-royalviolet-400: #7e5fcb;
+    --color-royalviolet-500: #5b3dac;
+    --color-royalviolet-600: #472d89;
+    --color-royalviolet-700: #35126d; /* your base */
+    --color-royalviolet-800: #2b0f58;
+    --color-royalviolet-900: #200b43;
+    --color-royalviolet-950: #14062e;
 }
 
 /*
@@ -84,77 +97,133 @@
     }
 }
 
+/* 
+:root defines variables at the document root level 
+These variables can be accessed anywhere in your CSS using var(--variable-name)
+*/
 :root {
-    --background: hsl(0 0% 100%);
-    --foreground: hsl(0 0% 3.9%);
-    --card: hsl(0 0% 100%);
-    --card-foreground: hsl(0 0% 3.9%);
-    --popover: hsl(0 0% 100%);
-    --popover-foreground: hsl(0 0% 3.9%);
-    --primary: hsl(0 0% 9%);
-    --primary-foreground: hsl(0 0% 98%);
-    --secondary: hsl(0 0% 92.1%);
-    --secondary-foreground: hsl(0 0% 9%);
-    --muted: hsl(0 0% 96.1%);
-    --muted-foreground: hsl(0 0% 45.1%);
-    --accent: hsl(0 0% 96.1%);
-    --accent-foreground: hsl(0 0% 9%);
-    --destructive: hsl(0 84.2% 60.2%);
-    --destructive-foreground: hsl(0 0% 98%);
-    --border: hsl(0 0% 92.8%);
-    --input: hsl(0 0% 89.8%);
-    --ring: hsl(0 0% 3.9%);
-    --chart-1: hsl(12 76% 61%);
-    --chart-2: hsl(173 58% 39%);
-    --chart-3: hsl(197 37% 24%);
-    --chart-4: hsl(43 74% 66%);
-    --chart-5: hsl(27 87% 67%);
-    --radius: 0.5rem;
-    --sidebar-background: hsl(0 0% 98%);
-    --sidebar-foreground: hsl(240 5.3% 26.1%);
-    --sidebar-primary: hsl(0 0% 10%);
-    --sidebar-primary-foreground: hsl(0 0% 98%);
-    --sidebar-accent: hsl(0 0% 94%);
-    --sidebar-accent-foreground: hsl(0 0% 30%);
-    --sidebar-border: hsl(0 0% 91%);
-    --sidebar-ring: hsl(217.2 91.2% 59.8%);
-    --sidebar: hsl(0 0% 98%);
+    /* Light Mode Colors */
+    --background: #ffffff; /* Main page background color (white) */
+    --foreground: #35126d; /* Primary text color (very dark gray, nearly black) */
+
+    /* Card Component Colors */
+    --card: hsl(0 0% 100%); /* Card background (white) */
+    --card-foreground: #ff6e6c; /* Card text color (matches --foreground) */
+
+    /* Popover/Popup Colors */
+    --popover: hsl(0 0% 100%); /* Popover background (white) */
+    --popover-foreground: #35126d; /* Popover text color */
+
+    /* Primary Brand Colors */
+    --primary: #ff6e6c; /* Main brand color (coral red) for buttons, highlights */
+    --primary-foreground: #35126d; /* Text color on primary buttons (dark purple) */
+
+    /* Secondary Brand Colors */
+    --secondary: #fbdd74; /* Secondary accent color (light teal) */
+    --secondary-foreground: hsl(0 0% 9%); /* Text color on secondary elements */
+
+    /* Muted/Disabled Colors */
+    --muted: hsl(0 0% 96.1%); /* Background for disabled/inactive elements */
+    --muted-foreground: hsl(0 0% 45.1%); /* Text color for disabled elements */
+
+    /* Accent Colors */
+    --accent: #e5dff5; /* Accent background (light gray) */
+    --accent-foreground: hsl(0 0% 9%); /* Text color on accent elements */
+
+    /* Error/Destructive Colors */
+    --destructive: hsl(0 84.2% 60.2%); /* Error/delete actions (bright red) */
+    --destructive-foreground: hsl(0 0% 98%); /* Text on error elements (white) */
+
+    /* Border Colors */
+    --border: hsl(0 0% 92.8%); /* Default border color (light gray) */
+    --input: hsl(0 0% 89.8%); /* Input field borders (slightly darker gray) */
+
+    /* Focus Ring (for accessibility) */
+    --ring: #35126d; /* Color of focus outline (matches text color) */
+
+    /* Chart/Data Visualization Colors */
+    --chart-1: hsl(12 76% 61%); /* Chart color 1 (orange-red) */
+    --chart-2: hsl(173 58% 39%); /* Chart color 2 (teal) */
+    --chart-3: hsl(197 37% 24%); /* Chart color 3 (dark blue) */
+    --chart-4: hsl(43 74% 66%); /* Chart color 4 (gold/yellow) */
+    --chart-5: hsl(27 87% 67%); /* Chart color 5 (orange) */
+
+    /* Border Radius (rounded corners) */
+    --radius: 0.5rem; /* Default border radius (8px) for buttons, cards, etc. */
+
+    /* Sidebar Specific Colors */
+    --sidebar-background: #e5dff5; /* Sidebar background (light purple) */
+    --sidebar-foreground: hsl(240 5.3% 26.1%); /* Sidebar text (dark gray-blue) */
+    --sidebar-primary: hsl(0 0% 10%); /* Primary sidebar item color (very dark) */
+    --sidebar-primary-foreground: hsl(0 0% 98%); /* Text on primary sidebar items */
+    --sidebar-accent: hsl(0 0% 94%); /* Accent color in sidebar */
+    --sidebar-accent-foreground: hsl(0 0% 30%); /* Text on accent items */
+    --sidebar-border: hsl(0 0% 91%); /* Sidebar borders */
+    --sidebar-ring: hsl(217.2 91.2% 59.8%); /* Focus ring in sidebar (blue) */
+    --sidebar: hsl(0 0% 98%); /* General sidebar background (white) */
 }
 
+/* 
+.dark class defines the dark mode color scheme 
+These variables override the :root variables when dark mode is active
+*/
 .dark {
-    --background: hsl(0 0% 3.9%);
-    --foreground: hsl(0 0% 98%);
-    --card: hsl(0 0% 3.9%);
-    --card-foreground: hsl(0 0% 98%);
-    --popover: hsl(0 0% 3.9%);
-    --popover-foreground: hsl(0 0% 98%);
-    --primary: hsl(0 0% 98%);
-    --primary-foreground: hsl(0 0% 9%);
-    --secondary: hsl(0 0% 14.9%);
-    --secondary-foreground: hsl(0 0% 98%);
-    --muted: hsl(0 0% 16.08%);
-    --muted-foreground: hsl(0 0% 63.9%);
-    --accent: hsl(0 0% 14.9%);
-    --accent-foreground: hsl(0 0% 98%);
-    --destructive: hsl(0 84% 60%);
-    --destructive-foreground: hsl(0 0% 98%);
-    --border: hsl(0 0% 14.9%);
-    --input: hsl(0 0% 14.9%);
-    --ring: hsl(0 0% 83.1%);
-    --chart-1: hsl(220 70% 50%);
-    --chart-2: hsl(160 60% 45%);
-    --chart-3: hsl(30 80% 55%);
-    --chart-4: hsl(280 65% 60%);
-    --chart-5: hsl(340 75% 55%);
-    --sidebar-background: hsl(0 0% 7%);
-    --sidebar-foreground: hsl(0 0% 95.9%);
-    --sidebar-primary: hsl(360, 100%, 100%);
-    --sidebar-primary-foreground: hsl(0 0% 100%);
-    --sidebar-accent: hsl(0 0% 15.9%);
-    --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
-    --sidebar-border: hsl(0 0% 15.9%);
-    --sidebar-ring: hsl(217.2 91.2% 59.8%);
-    --sidebar: hsl(240 5.9% 10%);
+    /* Dark Mode Base Colors */
+    --background: hsl(0 0% 3.9%); /* Dark background (near black) */
+    --foreground: hsl(0 0% 98%); /* Light text (almost white) */
+
+    /* Dark Card Components */
+    --card: hsl(0 0% 3.9%); /* Card bg matches dark background */
+    --card-foreground: hsl(0 0% 98%); /* Card text becomes light */
+
+    /* Dark Popovers */
+    --popover: hsl(0 0% 3.9%); /* Dark popover background */
+    --popover-foreground: hsl(0 0% 98%); /* Light popover text */
+
+    /* Inverted Primary Colors */
+    --primary: hsl(0 0% 98%); /* Primary becomes light (vs coral in light mode) */
+    --primary-foreground: hsl(0 0% 9%); /* Text on primary becomes dark */
+
+    /* Dark Secondary Colors */
+    --secondary: hsl(0 0% 14.9%); /* Dark gray secondary */
+    --secondary-foreground: hsl(0 0% 98%); /* Light text on secondary */
+
+    /* Dark Muted Colors */
+    --muted: hsl(0 0% 16.08%); /* Slightly lighter than background */
+    --muted-foreground: hsl(0 0% 63.9%); /* Medium gray for disabled text */
+
+    /* Dark Accent Colors */
+    --accent: hsl(0 0% 14.9%); /* Dark accent bg */
+    --accent-foreground: hsl(0 0% 98%); /* Light accent text */
+
+    /* Consistent Destructive Colors */
+    --destructive: hsl(0 84% 60%); /* Keeps red color (slightly different from light) */
+    --destructive-foreground: hsl(0 0% 98%); /* White text (same as light) */
+
+    /* Dark Borders */
+    --border: hsl(0 0% 14.9%); /* Dark gray borders */
+    --input: hsl(0 0% 14.9%); /* Input fields match border color */
+
+    /* Light Focus Ring */
+    --ring: hsl(0 0% 83.1%); /* Light gray ring for visibility on dark bg */
+
+    /* Dark Mode Chart Colors */
+    --chart-1: hsl(220 70% 50%); /* Blue (vs orange-red in light) */
+    --chart-2: hsl(160 60% 45%); /* Teal (more saturated than light) */
+    --chart-3: hsl(30 80% 55%); /* Orange */
+    --chart-4: hsl(280 65% 60%); /* Purple */
+    --chart-5: hsl(340 75% 55%); /* Pink */
+
+    /* Dark Sidebar Theme */
+    --sidebar-background: hsl(0 0% 7%); /* Very dark gray sidebar */
+    --sidebar-foreground: hsl(0 0% 95.9%); /* Nearly white text */
+    --sidebar-primary: hsl(360, 100%, 100%); /* Pure white for primary items */
+    --sidebar-primary-foreground: hsl(0 0% 100%); /* White text (duplicate?) */
+    --sidebar-accent: hsl(0 0% 15.9%); /* Slightly lighter than sidebar bg */
+    --sidebar-accent-foreground: hsl(240 4.8% 95.9%); /* Light text on accents */
+    --sidebar-border: hsl(0 0% 15.9%); /* Border matches accent bg */
+    --sidebar-ring: hsl(217.2 91.2% 59.8%); /* Keeps blue focus ring (consistent) */
+    --sidebar: hsl(240 5.9% 10%); /* Alternate sidebar color (blueish dark) */
 }
 
 @layer base {
@@ -163,5 +232,12 @@
     }
     body {
         @apply bg-background text-foreground;
+    }
+}
+
+/* Custom utility for alternating table row striping in light and dark mode */
+@layer components {
+    .table-row {
+        @apply odd:bg-white even:bg-royalviolet-50 dark:odd:bg-gray-800 dark:even:bg-gray-900;
     }
 }
